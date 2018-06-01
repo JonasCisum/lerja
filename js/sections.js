@@ -67,7 +67,7 @@ function insertCTAWebshop() {
 
             document.querySelector("[data-CTAWebshop_titel]").textContent = hverCTAWebshop.acf.sektiontitel;
 
-            document.querySelector("[data-CTAWebshop_underrubrik]").textContent = hverCTAWebshop.acf.underrubrik;
+            document.querySelector("[data-CTAWebshop_underrubrik]").innerHTML = hverCTAWebshop.acf.underrubrik;
         }
     })
 }
