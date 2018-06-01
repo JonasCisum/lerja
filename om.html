@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Lerja - Om</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/fontawesome-all.css">
+</head>
+
+<body>
+    <header data-header>
+        <nav data-nav></nav>
+    </header>
+
+    <section id="hero">
+        <h1 data-side_titel></h1>
+        <p data-underrubrik></p>
+        <img data-s1_billede1 src="" alt="">
+        <img data-s1_billede2 src="" alt="">
+        <div id="lerja_ordforklaring">
+            <p>Lerja</p>
+            <p>[ˈleeˀɐ̯ˈja]</p>
+            <p>sb,. -en. Bornholmsk oprindelse. Betydning: Lerjord.</p>
+        </div>
+    </section>
+
+    <section id="taeller">
+        <div class="infografik_1"><img>
+            <p></p>
+        </div>
+        <div class="infografik_2"><img>
+            <p></p>
+        </div>
+        <div class="infografik_3"><img>
+            <p></p>
+        </div>
+    </section>
+
+    <section id="video_om">
+        <div class="video_container">
+
+        </div>
+    </section>
+
+    <section id="historie">
+        <h2 data-s4_sektionnavn></h2>
+        <div data-s4_brodtekst></div>
+        <img data-s4_billede1 src="" alt="">
+    </section>
+
+    <section data-sectionShop id="besog_vores_shop">
+    </section>
+
+    <section id="showcase_section">
+        <h2>Samarbejdspartnere</h2>
+        <template id="showcase_template">
+            <img data-showcase_img src="" alt="">
+            <p data-showcase_navn></p>
+        </template>
+    </section>
+
+    <footer></footer>
+    <!--    SCRIPT START   -->
+    <script src="js/fetch_json.js"></script>
+    <script src="js/rest_api.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/sections.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        //Funktion der tager indhold fra json og sætter ind i html'ens data-tags:
+        function insertContent() {
+            //kør json array igennem
+            indhold.forEach(hverSide => {
+                // Hvis et array-objekt har title="xx" skal den hente indhold fra hverSide.acf.xx og sætte indholdet ind i [data-xx] på hver side:
+                if (hverSide.title.rendered == "Om") {
+                    document.querySelector("[data-side_titel]").textContent = hverSide.acf.s1_sidenavn;
+                    document.querySelector("[data-underrubrik]").textContent = hverSide.acf.s1_underrubrik;
+                    document.querySelector("[data-s1_billede1]").src = hverSide.acf.s1_billede1;
+                    document.querySelector("[data-s1_billede2]").src = hverSide.acf.s1_billede2;
+                    document.querySelector("[data-s4_sektionnavn]").textContent = hverSide.acf.s4_sektionnavn;
+                    document.querySelector("[data-s4_brodtekst]").innerHTML = hverSide.acf.s4_brodtekst;
+                    document.querySelector("[data-s4_billede1]").src = hverSide.acf.s4_billede1;
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

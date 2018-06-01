@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Lerja - Kontakt</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/fontawesome-all.css">
+</head>
+
+<body>
+    <header data-header>
+        <nav data-nav></nav>
+    </header>
+
+    <section id="hero">
+        <h1 data-side_titel></h1>
+        <p data-underrubrik></p>
+    </section>
+
+    <section id="kontaktform">
+        <!--        FORMULAR          -->
+        <form action="sendmail.php" method="post">
+            <p>Fornavn:</p>
+            <input type="text" name="fornavn" placeholder="Fornavn" value="" required>
+            <p>Efternavn:</p>
+            <input type="text" name="efternavn" placeholder="Efternavn" value="" required>
+            <p>Din e-mail:</p>
+            <input type="email" name="email" placeholder="Din e-mail" value="" required>
+            <p>Virksomhed:</p>
+            <input type="text" name="virksomhed" placeholder="Virksomhed" value="">
+            <p>Besked:</p>
+            <textarea name="besked" placeholder="Skriv din besked her."></textarea>
+            <input type="submit" name="submit" value="Send besked">
+        </form>
+    </section>
+
+    <section id="maps">
+        <h2>Find Lerja</h2>
+        <div id="maps_container"></div>
+    </section>
+
+    <footer></footer>
+    <!--    SCRIPT START   -->
+    <script src="js/fetch_json.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/sections.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        function insertContent() {
+            //kør json array igennem
+            indhold.forEach(hverSide => {
+                // Hvis et array-objekt har title="xx" skal den hente indhold fra hverSide.acf.xx og sætte indholdet ind i [data-xx] på hver side:
+                if (hverSide.title.rendered == "Kontakt") {
+                    document.querySelector("[data-side_titel]").textContent = hverSide.acf.s1_sidenavn;
+                    document.querySelector("[data-underrubrik]").textContent = hverSide.acf.s1_underrubrik;
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

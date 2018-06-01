@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Lerja - Nyheder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/fontawesome-all.css">
+</head>
+
+<body>
+    <header data-header>
+        <nav data-nav></nav>
+    </header>
+
+    <section id="hero">
+        <h1>Nyheder</h1>
+    </section>
+
+    <section id="nyheder_container">
+        <template id="nyhed_template">
+           <article id="nyhed_card">
+<!--               <a data-nyhedSingleURL href="">-->
+                <img class="nyhed_img" data-nyhedImg src="-" alt="-">
+               <h3 class="nyhed_titel" data-nyhedTitel></h3>
+               <div class="nyhed_uddrag" data-nyhedUddrag></div>
+               <a class="a_btn btn_to_nyhed" href="#">Læs mere ></a>
+<!--               <p class="nyhed_knap">Læs mere ></p>-->
+<!--               </a>-->
+           </article>
+       </template>
+    </section>
+
+    <!--    <section id="pagination"></section>-->
+
+    <section data-sectionShop id="besog_vores_shop">
+    </section>
+
+    <section id="showcase_section">
+        <h2>Samarbejdspartnere</h2>
+        <template id="showcase_template">
+            <img data-showcase_img src="" alt="">
+            <p data-showcase_navn></p>
+        </template>
+    </section>
+
+    <footer></footer>
+    <!--    SCRIPT START   -->
+    <script src="js/fetch_json.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/sections.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        //
+        //    For each klon af hver nyhed
+        //
+
+        let indholdNyheder;
+        let nyhedTemplate = document.querySelector("#nyhed_template");
+
+        // Lav en klon af template
+        function insertNyheder() {
+            //kør json array igennem og lav en klon af template
+            indholdNyheder.forEach(hverNyhed => {
+                let klon = nyhedTemplate.cloneNode(true).content;
+                //
+                klon.querySelector("[data-nyhedImg]").src = hverNyhed.acf.nyhedbillede;
+                klon.querySelector("[data-nyhedImg]").alt = hverNyhed.acf.billedetekst;
+                klon.querySelector("[data-nyhedTitel]").textContent = hverNyhed.title.rendered;
+                klon.querySelector("[data-nyhedUddrag]").innerHTML = hverNyhed.excerpt.rendered;
+                klon.querySelector(".btn_to_nyhed").href = "single.html?id=" + hverNyhed.id;
+
+                document.querySelector("#nyheder_container").appendChild(klon);
+            })
+        }
+
+    </script>
+</body>
+
+</html>

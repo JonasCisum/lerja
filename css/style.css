@@ -1,0 +1,152 @@
+/*------------------------
+    IMPORTS
+------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i');
+
+/*------------------------
+    Root Variabler
+------------------------*/
+
+:root {
+    --HeadingFont: 'Playfair Display', Georgia, serif;
+    --BodyFont: 'Lato', Arial, sans-serif;
+
+    --Color1: #000000;
+    --Color2: #E3EEE1;
+    --Color3: #000000;
+    --Color4: #000000;
+    --Color5: #000000;
+}
+
+/*------------------------
+    OVERALLS
+------------------------*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--HeadingFont);
+}
+
+.a_btn {
+    font-family: var(--HeadingFont);
+    text-decoration: inherit;
+    cursor: pointer;
+}
+
+body {
+    font-family: var(--BodyFont);
+}
+
+.img2 {
+    filter: brightness(105%) contrast(93%);
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+/*------------------------
+    NAVIGATION
+------------------------*/
+
+header {
+    padding: 10px 15px 10px 15px;
+}
+
+@media screen and (min-width:600px) {
+    /* Desktop */
+    header {
+        padding: 20px 30px 20px 30px;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+}
+
+nav {
+    display: grid;
+}
+
+@media screen and (min-width:600px) {
+    /* Desktop */
+    nav {
+        grid-template-columns: 1fr repeat(6, 80px);
+        grid-template-rows: 1;
+        align-items: center;
+    }
+}
+
+nav .nav_item {
+    justify-self: center;
+    color: inherit;
+    text-decoration: none;
+    font-family: var(--HeadingFont);
+    font-size: 1em;
+    font-weight: 400;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transition: .1s;
+}
+
+.nav_item:hover,
+.nav_item:focus {
+    color: #606060;
+    /*    font-weight: 700;*/
+    border-bottom: 2px solid #909090;
+    transition: .2s;
+}
+
+@media screen and (min-width:600px) {
+    .nav_item {
+        /*        margin-bottom: 20px;*/
+    }
+}
+
+.header_logo {
+    justify-self: start;
+}
+
+@media screen and (min-width:600px) {
+    .header_logo img {
+        height: 80px;
+        padding: 10px;
+    }
+}
+
+
+/*------------------------
+    SECTIONS
+------------------------*/
+
+/* ALL SECTIONS */
+
+section {
+    padding: 100px 15px 100px 15px;
+}
+
+@media screen and (min-width:600px) {
+    /* Desktop */
+    section {
+        padding: 150px 30px 150px 30px;
+    }
+}
+
+section:nth-child(odd) {
+    background: var(--Color2);
+}
+
+/* END ALL SECTIONS */
