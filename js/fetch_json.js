@@ -29,6 +29,17 @@ async function hentJsonShowcase() {
     insertShowcase();
 }
 
+async function hentJsonCTAWebshop() {
+    // Hent json fra REST API:
+    let jsonObjekt = await fetch("http://kea.jonascisum.dk/kea/eksamen-02/lerja/wordpress/wp-json/wp/v2/cta_webshop");
+
+    //Vis objekt som tekst:
+    indholdCTAWebshop = await jsonObjekt.json();
+
+    console.log(indholdCTAWebshop);
+    insertCTAWebshop();
+}
+
 async function hentJsonSoMeFB() {
     // Hent json fra REST API:
     let jsonObjekt = await fetch("http://kea.jonascisum.dk/kea/eksamen-02/lerja/wordpress/wp-json/wp/v2/some_urls");
@@ -89,6 +100,7 @@ function insertHeader() {
 document.addEventListener("DOMContentLoaded", hentJson);
 document.addEventListener("DOMContentLoaded", hentJsonNyheder);
 document.addEventListener("DOMContentLoaded", hentJsonShowcase);
+document.addEventListener("DOMContentLoaded", hentJsonCTAWebshop);
 document.addEventListener("DOMContentLoaded", hentJsonSoMeFB);
 document.addEventListener("DOMContentLoaded", hentJsonSoMeIG);
 document.addEventListener("DOMContentLoaded", hentJsonFooter);

@@ -34,7 +34,7 @@ window.addEventListener("load", hentFooter);
 
 
 //
-// Showcase items
+// Showcase items:
 //
 
 let indholdShowcase;
@@ -49,5 +49,25 @@ function insertShowcase() {
         klon.querySelector("[data-showcase_img]").src = hverShowcase.acf.billede;
         klon.querySelector("[data-showcase_navn]").textContent = hverShowcase.acf.virksomhedsnavn;
         document.querySelector("#showcase_section").appendChild(klon);
+    })
+}
+
+
+//
+// CTA Webshop:
+//
+
+function insertCTAWebshop() {
+    //kør json array igennem
+    console.log(indholdCTAWebshop);
+
+    indholdCTAWebshop.forEach(hverCTAWebshop => {
+        // Hvis et array-objekt har title="xx" skal den hente indhold fra hverSide.acf.xx og sætte indholdet ind i [data-xx] på hver side:
+        if (hverCTAWebshop.title.rendered == "Webshop Sektion") {
+
+            document.querySelector("[data-CTAWebshop_titel]").textContent = hverCTAWebshop.acf.sektiontitel;
+
+            document.querySelector("[data-CTAWebshop_underrubrik]").textContent = hverCTAWebshop.acf.underrubrik;
+        }
     })
 }
