@@ -13,7 +13,7 @@
 :root {
     --HeadingFont: 'Playfair Display', Georgia, serif;
     --BodyFont: 'Lato', Arial, sans-serif;
-    --HeaderHeight: 90px;
+    --MaxPageWidth: 1500px;
 
     --Color1: #000000;
     --Color2: #E3EEE1;
@@ -30,10 +30,6 @@ html {}
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 1200px;
 }
 
 h1,
@@ -53,6 +49,12 @@ h6 {
 
 body {
     font-family: var(--BodyFont);
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
 }
 
 .img2 {
@@ -69,6 +71,32 @@ section:nth-of-type(1) {
     padding-top: 200px;
 }
 
+.page {
+    display: grid;
+    /*    grid-template-columns: minmax(0em, 1500px);*/
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0em, auto) minmax(0em, auto) minmax(0em, auto);
+    grid-template-areas: "header" "main" "footer";
+    max-width: 1500px;
+    /*    max-width: var(--MaxPageWidth);*/
+    margin: 0 auto;
+}
+
+header {
+    grid-area: header;
+    width: 100%;
+}
+
+main {
+    grid-area: main;
+    width: 100%;
+}
+
+footer {
+    grid-area: footer;
+    width: 100%;
+}
+
 /*------------------------
     NAVIGATION
 ------------------------*/
@@ -76,18 +104,21 @@ section:nth-of-type(1) {
 header {
     position: fixed;
     padding: 10px 15px 10px 15px;
-    margin: 0 auto;
+    background: #fff;
+    max-width: 1500px;
+    /*    max-width: var(--MaxPageWidth);*/
 }
 
 @media screen and (min-width:600px) {
     /* Desktop */
     header {
-        padding: 20px 30px 20px 30px;
+        padding: 20px 10px 20px 30px;
     }
 }
 
 nav {
     display: grid;
+    justify-items: center;
 }
 
 @media screen and (min-width:600px) {
@@ -95,17 +126,29 @@ nav {
     nav {
         grid-template-columns: 1fr repeat(6, 80px);
         /*        grid-template-columns: 6fr repeat(6, minmax(80px, 1fr));*/
-        grid-template-rows: 1;
+        grid-template-rows: 1fr;
         align-items: center;
     }
 }
 
 .header_logo {
-    grid-column: 1/2 !important;
+    justify-self: start;
+}
+
+.nav_item:nth-last-of-type(1) {
+    /*    justify-self: end;*/
+}
+
+@media screen and (min-width:600px) {
+    .header_logo img {
+        width: 170px;
+        /*        padding: 10px;*/
+        padding-left: 0px;
+    }
 }
 
 .nav_item {
-    justify-self: center;
+    /*    justify-self: center;*/
     color: inherit;
     text-decoration: none;
     font-family: var(--HeadingFont);
@@ -125,19 +168,6 @@ nav {
     border-bottom: 2px solid #909090;
     transition: .2s;
 }
-
-/*
-.header_logo {
-    justify-self: start;
-}
-
-@media screen and (min-width:600px) {
-    .header_logo img {
-        height: 80px;
-        padding: 10px;
-    }
-}
-*/
 
 /*------------------------
     SECTIONS
