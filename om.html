@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <title>Lerja - Om</title>
+    <link rel="stylesheet" href="css/odometer-theme-minimal.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="fonts/fontawesome/css/fontawesome-all.css">
 </head>
@@ -27,15 +28,20 @@
         </div>
     </section>
 
-    <section id="taeller">
-        <div class="infografik_1"><img>
-            <p></p>
+    <section id="infografik">
+        <div class="odometer_wrapper">
+            <div id="odometer" class="odometer kaffe">0000</div>
+            <p class="infografik_tekst">Kopper kaffe drukket</p>
         </div>
-        <div class="infografik_2"><img>
-            <p></p>
+
+        <div class="odometer_wrapper">
+            <div id="odometer" class="odometer ler">0000</div>
+            <p class="infografik_tekst">Ler brugt</p>
         </div>
-        <div class="infografik_3"><img>
-            <p></p>
+
+        <div class="odometer_wrapper">
+            <div id="odometer" class="odometer kopper">0000</div>
+            <p class="infografik_tekst">Kopper drejet</p>
         </div>
     </section>
 
@@ -73,6 +79,9 @@
     <script src="js/nav.js"></script>
     <script src="js/sections.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/infografik.js"></script>
+    <script src="js/odometer.js"></script>
+
     <script>
         //Funktion der tager indhold fra json og sætter ind i html'ens data-tags:
         function insertContent() {
@@ -90,7 +99,6 @@
                 }
             })
         }
-
     </script>
 </body>
 
