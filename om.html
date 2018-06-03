@@ -12,66 +12,79 @@
 </head>
 
 <body>
-    <header data-header>
-        <nav data-nav></nav>
-    </header>
+    <div class="page">
+        <header data-header>
+            <nav data-nav></nav>
+        </header>
+        <main>
+            <section id="om_hero" class="magazine">
+                <div class="tekst_1">
+                    <h1 data-side_titel></h1>
+                    <p data-underrubrik></p>
+                </div>
+                <div class="img_container_1">
+                    <img data-s1_billede1 src="" alt=""></div>
+                <div class="img_container_2">
+                    <img data-s1_billede2 src="" alt="">
+                </div>
+                <div class="tekst_2">
+                    <p>Lerja</p>
+                    <p>[ˈleeˀɐ̯ˈja]</p>
+                    <p>sb,. -en. Bornholmsk oprindelse.</p>
+                    <p>Betydning: Lerjord.</p>
+                </div>
+            </section>
 
-    <section id="hero">
-        <h1 data-side_titel></h1>
-        <p data-underrubrik></p>
-        <img data-s1_billede1 src="" alt="">
-        <img data-s1_billede2 src="" alt="">
-        <div id="lerja_ordforklaring">
-            <p>Lerja</p>
-            <p>[ˈleeˀɐ̯ˈja]</p>
-            <p>sb,. -en. Bornholmsk oprindelse. Betydning: Lerjord.</p>
-        </div>
-    </section>
+            <section id="infografik">
+                <div class="odometer_wrapper infografik_1">
+                    <div id="odometer" class="odometer kaffe">0000</div>
+                    <p class="infografik_tekst">Kopper kaffe drukket</p>
+                </div>
 
-    <section id="infografik">
-        <div class="odometer_wrapper infografik_1">
-            <div id="odometer" class="odometer kaffe">0000</div>
-            <p class="infografik_tekst">Kopper kaffe drukket</p>
-        </div>
+                <div class="odometer_wrapper infografik_2">
+                    <div id="odometer" class="odometer ler">0000</div>
+                    <p class="infografik_tekst">Kg ler æltet</p>
+                </div>
 
-        <div class="odometer_wrapper infografik_2">
-            <div id="odometer" class="odometer ler">0000</div>
-            <p class="infografik_tekst">Kg ler æltet</p>
-        </div>
+                <div class="odometer_wrapper infografik_3">
+                    <div id="odometer" class="odometer kopper">
+                        <p>0000</p>
+                    </div>
+                    <p class="infografik_tekst">Kopper produceret</p>
+                </div>
+            </section>
 
-        <div class="odometer_wrapper infografik_3">
-            <div id="odometer" class="odometer kopper">0000</div>
-            <p class="infografik_tekst">Kopper produceret</p>
-        </div>
-    </section>
+            <section id="video_om">
+                <div class="video_container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Gdby9Pyx-og?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </section>
 
-    <section id="video_om">
-        <div class="video_container">
+            <section id="historie" class="magazine">
+                <div class=tekst_1>
+                    <h2 data-s4_sektionnavn></h2>
+                    <div data-s4_brodtekst></div>
+                </div>
+                <div class="img_container_1">
+                    <img data-s4_billede1 src="" alt=""></div>
+            </section>
 
-        </div>
-    </section>
+            <section data-CTAWebshop_section class="cta_webshop">
+                <h2 data-CTAWebshop_titel></h2>
+                <p data-CTAWebshop_underrubrik></p>
+                <a class="a_btn btn_to_shop" href="#">Gå til butikken ></a>
+            </section>
 
-    <section id="historie">
-        <h2 data-s4_sektionnavn></h2>
-        <div data-s4_brodtekst></div>
-        <img data-s4_billede1 src="" alt="">
-    </section>
-
-    <section data-CTAWebshop_section class="cta_webshop">
-        <h2 data-CTAWebshop_titel></h2>
-        <p data-CTAWebshop_underrubrik></p>
-        <a class="a_btn btn_to_shop" href="#">Gå til butikken ></a>
-    </section>
-
-    <section id="showcase_section">
-        <h2>Samarbejdspartnere</h2>
-        <template id="showcase_template">
+            <section id="showcase_section">
+                <h2>Samarbejdspartnere</h2>
+                <template id="showcase_template">
             <img data-showcase_img src="" alt="">
             <p data-showcase_navn></p>
         </template>
-    </section>
-
-    <footer></footer>
+            </section>
+        </main>
+        <footer></footer>
+    </div>
     <!--    SCRIPT START   -->
     <script src="js/fetch_json.js"></script>
     <script src="js/rest_api.js"></script>

@@ -11,75 +11,60 @@
 </head>
 
 <body>
-    <header data-header>
-        <nav data-nav></nav>
-    </header>
+    <div class="page">
+        <header data-header>
+            <nav data-nav></nav>
+        </header>
+        <main>
+            <section id="hero">
+                <h1>Nyheder</h1>
+            </section>
 
-    <section id="hero">
-        <h1>Nyheder</h1>
-    </section>
+            <section id="nyheder_container">
+                <div id="nyhed_modtager"></div>
+            </section>
 
-    <section id="nyheder_container">
-        <template id="nyhed_template">
-           <article id="nyhed_card">
-<!--               <a data-nyhedSingleURL href="">-->
-                <img class="nyhed_img" data-nyhedImg src="-" alt="-">
-               <h3 class="nyhed_titel" data-nyhedTitel></h3>
-               <div class="nyhed_uddrag" data-nyhedUddrag></div>
-               <a class="a_btn btn_to_nyhed" href="#">Læs mere ></a>
-<!--               <p class="nyhed_knap">Læs mere ></p>-->
-<!--               </a>-->
+            <template id="nyhed_template">
+               <article id="nyhed_card">
+                    <div class="nyhed_img_container">
+                        <img class="nyhed_img" data-nyhedImg src="-" alt="-">
+                    </div>
+                    <div class="nyhed_tekst_card">
+                        <h3 class="nyhed_titel" data-nyhedTitel></h3>
+                        <div class="nyhed_uddrag" data-nyhedUddrag></div>
+                        <a class="a_btn btn_to_nyhed" href="#">Læs mere ></a>
+                    </div>
            </article>
        </template>
-    </section>
 
-    <!--    <section id="pagination"></section>-->
+            <!--    <section id="pagination"></section>-->
 
-    <section data-CTAWebshop_section class="cta_webshop">
-        <h2 data-CTAWebshop_titel></h2>
-        <p data-CTAWebshop_underrubrik></p>
-        <a class="a_btn btn_to_shop" href="#">Gå til butikken ></a>
-    </section>
+            <section data-CTAWebshop_section class="cta_webshop">
+                <h2 data-CTAWebshop_titel></h2>
+                <p data-CTAWebshop_underrubrik></p>
+                <a class="a_btn btn_to_shop" href="#">Gå til butikken ></a>
+            </section>
 
-    <section id="showcase_section">
-        <h2>Samarbejdspartnere</h2>
-        <template id="showcase_template">
+            <section id="showcase_section">
+                <h2>Samarbejdspartnere</h2>
+                <template id="showcase_template">
             <img data-showcase_img src="" alt="">
             <p data-showcase_navn></p>
         </template>
-    </section>
-
-    <footer></footer>
+            </section>
+        </main>
+        <footer></footer>
+    </div>
     <!--    SCRIPT START   -->
     <script src="js/fetch_json.js"></script>
+    <script src="js/nyheder.js"></script>
     <script src="js/maps.js"></script>
     <script src="js/buttons.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/sections.js"></script>
     <script src="js/footer.js"></script>
     <script>
-        //
-        //    For each klon af hver nyhed
-        //
 
-        let indholdNyheder;
-        let nyhedTemplate = document.querySelector("#nyhed_template");
-
-        // Lav en klon af template
-        function insertNyheder() {
-            //kør json array igennem og lav en klon af template
-            indholdNyheder.forEach(hverNyhed => {
-                let klon = nyhedTemplate.cloneNode(true).content;
-                //
-                klon.querySelector("[data-nyhedImg]").src = hverNyhed.acf.nyhedbillede;
-                klon.querySelector("[data-nyhedImg]").alt = hverNyhed.acf.billedetekst;
-                klon.querySelector("[data-nyhedTitel]").textContent = hverNyhed.title.rendered;
-                klon.querySelector("[data-nyhedUddrag]").innerHTML = hverNyhed.excerpt.rendered;
-                klon.querySelector(".btn_to_nyhed").href = "single.html?id=" + hverNyhed.id;
-
-                document.querySelector("#nyheder_container").appendChild(klon);
-            })
-        }
 
     </script>
 </body>
