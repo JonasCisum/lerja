@@ -40,6 +40,18 @@ h4,
 h5,
 h6 {
     font-family: var(--HeadingFont);
+    font-weight: 400;
+    margin-top: -0.3em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 3.6em;
+    letter-spacing: 0.05em;
+}
+
+h2 {
+    font-size: 2.5em;
 }
 
 .a_btn {
@@ -48,6 +60,10 @@ h6 {
     color: inherit;
     text-decoration: inherit;
     cursor: pointer;
+}
+
+.a_btn:hover {
+    color: #555;
 }
 
 body {
@@ -169,7 +185,7 @@ nav {
 
 .nav_item:hover,
 .nav_item:focus {
-    color: #606060;
+    color: #404040;
     /*    font-weight: 700;*/
     border-bottom: 2px solid #909090;
     transition: .2s;
@@ -182,72 +198,120 @@ nav {
 /*** ALL SECTIONS ***/
 
 section {
-    padding: 100px 15px 100px 15px;
+    padding: 80px 15px 80px 15px;
 }
 
 @media screen and (min-width:600px) {
     /* Desktop */
     section {
-        padding: 150px 30px 150px 30px;
+        padding: 120px 30px 120px 30px;
     }
 }
 
-/*** INDEX ***/
-
-/* Hero */
-
-#hero {
+.magazine {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, minmax(0em, 5vh));
     grid-gap: 30px;
 }
 
-
-.hero_tekst {
-    grid-column: 7/12;
-    grid-row-start: 7;
-    z-index: 100;
-}
-
-.hero_tekst h1 {
-    font-size: 3.6em;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    margin-top: -0.3em;
-    margin-bottom: 0.5em;
-}
-
-/*
-#hero .btn_to_shop {
-    grid-column: 7/12;
-    grid-row: 10/11;
-}
-*/
-
-.hero_img_1 {
-    grid-column: 6/12;
-    grid-row: 1/7;
-    overflow: hidden;
-}
-
-.hero_img_1 img {
+.magazine img {
     position: relative;
     top: 40%;
     transform: translateY(-50%);
 }
 
-.hero_img_2 {
+/*** TEMPLATE SECTIONS ***/
+
+/* Besøg vores shop */
+
+.cta_webshop {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+    background: var(--ColorGreen);
+    text-align: center;
+}
+
+.cta_webshop h2 {
+    grid-column: 2/3;
+    grid-row-start: 2;
+}
+
+.cta_webshop p {
+    grid-column: 2/3;
+    grid-row-start: 3;
+}
+
+.cta_webshop .a_btn {
+    grid-column: 2/3;
+    grid-row-start: 4;
+}
+
+/**/
+
+/* Besøg vores shop */
+
+#showcase_section {
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-gap: 30px;
+    text-align: center;
+}
+
+#showcase_section .tekst_1 {
+    grid-column: 2/4;
+    grid-row-start: 1;
+}
+
+#showcase_section .a_btn {
+    grid-column: 2/3;
+    grid-row-start: 4;
+}
+
+#showcase_section #showcase_modtager {
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+
+#showcase_modtager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.showcase_item img {
+    filter: brightness(100%) contrast(100%);
+}
+
+/**/
+
+/*** INDEX ***/
+
+/**/
+
+/* Hero */
+
+#hero .tekst_1 {
+    grid-column: 7/12;
+    grid-row-start: 7;
+    z-index: 100;
+}
+
+#hero .img_container_1 {
+    grid-column: 6/12;
+    grid-row: 1/7;
+    overflow: hidden;
+}
+
+#hero .img_container_2 {
     grid-column: 2/7;
     grid-row: 3/12;
     overflow: hidden;
     z-index: 10;
-}
-
-.hero_img_2 img {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 #hero .bg_box {
@@ -256,17 +320,86 @@ section {
     background: var(--ColorGreen);
 }
 
+/**/
 
+/* Mere End */
 
+#mere_end .tekst_1 {
+    grid-column: 2/6;
+    grid-row-start: 3;
+    z-index: 100;
+}
 
+#mere_end .tekst_2 {
+    grid-column: 8/12;
+    grid-row-start: 9;
+    z-index: 100;
+}
 
+#mere_end .img_container_1 {
+    grid-column: 7/12;
+    grid-row: 1/9;
+    overflow: hidden;
+}
 
+#mere_end .img_container_2 {
+    grid-column: 2/8;
+    grid-row: 6/12;
+    overflow: hidden;
+    z-index: 10;
+}
 
+#mere_end .bg_box {
+    grid-column: 5/10;
+    grid-row: 4/10;
+    background: var(--ColorBlue);
+}
 
+/**/
 
+/* Produkter i brug */
 
+#produkter_i_brug .tekst_1 {
+    grid-column: 7/12;
+    grid-row-start: 7;
+    z-index: 100;
+}
 
+#produkter_i_brug .img_container_1 {
+    grid-column: 6/12;
+    grid-row: 1/7;
+    overflow: hidden;
+}
 
+#produkter_i_brug .img_container_2 {
+    grid-column: 2/7;
+    grid-row: 3/12;
+    overflow: hidden;
+    z-index: 10;
+}
 
+/**/
+
+/* Manden bag */
+
+#manden_bag .tekst_1 {
+    grid-column: 2/6;
+    grid-row-start: 2;
+    z-index: 100;
+}
+
+#manden_bag .img_container_1 {
+    grid-column: 7/12;
+    grid-row: 1/11;
+    overflow: hidden;
+}
+
+#manden_bag .bg_box {
+    grid-column: 5/8;
+    grid-row: 3/8;
+    background: var(--ColorRed);
+}
+
+/**/
 
 /* END ALL SECTIONS */

@@ -38,17 +38,21 @@ window.addEventListener("load", hentFooter);
 //
 
 let indholdShowcase;
-let showcaseTemplate = document.querySelector("#showcase_template");
+
 
 // Lav en klon af template
 function insertShowcase() {
+    let showcaseTemplate = document.querySelector("#showcase_template");
+    let showcaseModtager = document.querySelector("#showcase_modtager");
+    showcaseModtager.innerHTML = "";
     //kør json array igennem og lav en klon af template
     indholdShowcase.forEach(hverShowcase => {
         let klon = showcaseTemplate.cloneNode(true).content;
         //
         klon.querySelector("[data-showcase_img]").src = hverShowcase.acf.billede;
         klon.querySelector("[data-showcase_navn]").textContent = hverShowcase.acf.virksomhedsnavn;
-        document.querySelector("#showcase_section").appendChild(klon);
+
+        showcaseModtager.appendChild(klon);
     })
 }
 
