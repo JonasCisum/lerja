@@ -89,7 +89,7 @@ p {
 }
 
 section:nth-of-type(1) {
-    padding-top: 120px;
+    margin-top: 50px;
 }
 
 .page {
@@ -451,12 +451,17 @@ footer li {
 
 /*** NYHEDER ***/
 
+#nyheder_hero {
+    padding-bottom: 20px;
+}
+
 #nyheder_container {
     /*    display: grid;*/
     /*    grid-template-columns: 1fr 10fr 1fr;*/
     /*    grid-template-rows: 50px minmax(1em, 400px) 50px;*/
     /*    grid-gap: 30px;*/
     /*    text-align: center;*/
+    padding-top: 50px;
 }
 
 #nyhed_modtager {
@@ -470,7 +475,7 @@ footer li {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-gap: 20px;
+    grid-gap: 50px;
     /*    max-height: 350px;*/
     margin-bottom: 100px;
 }
@@ -490,7 +495,15 @@ footer li {
 
 .nyhed_tekst_card {
     grid-column: 1/2;
+    align-self: center;
 }
+
+.nyhed_titel {
+    font-family: var(--HeadingFont);
+    font-size: 2em;
+}
+
+
 
 /**/
 
