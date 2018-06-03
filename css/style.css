@@ -109,7 +109,7 @@ footer {
 header {
     position: fixed;
     padding: 10px 15px 10px 15px;
-    background: #fff;
+    background: hsla(0, 0%, 100%, 0.95);
     max-width: 1300px;
     z-index: 1000;
     /*    max-width: var(--MaxPageWidth);*/
@@ -218,10 +218,12 @@ section {
     margin-bottom: 0.5em;
 }
 
+/*
 #hero .btn_to_shop {
     grid-column: 7/12;
     grid-row: 10/11;
 }
+*/
 
 .hero_img_1 {
     grid-column: 6/12;
@@ -231,7 +233,7 @@ section {
 
 .hero_img_1 img {
     position: relative;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
 }
 
