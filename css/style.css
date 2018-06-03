@@ -456,33 +456,45 @@ footer li {
 }
 
 #nyheder_container {
-    /*    display: grid;*/
-    /*    grid-template-columns: 1fr 10fr 1fr;*/
-    /*    grid-template-rows: 50px minmax(1em, 400px) 50px;*/
-    /*    grid-gap: 30px;*/
-    /*    text-align: center;*/
     padding-top: 50px;
 }
 
 #nyhed_modtager {
     display: grid;
     grid-template-columns: 1fr;
-    /*    grid-template-rows: repeat(4, 500px);*/
-    grid-gap: 100px;
 }
 
 #nyhed_modtager article {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    grid-template-areas: "tekst billede";
     grid-gap: 50px;
     /*    max-height: 350px;*/
-    margin-bottom: 100px;
+    margin-bottom: 80px;
+}
+
+#nyhed_modtager article:nth-child(even) {
+    grid-template-areas: "billede tekst";
+}
+
+.nyhed_tekst_card {
+    /*    grid-column: 1/2;*/
+    grid-area: tekst;
+    align-self: center;
+}
+
+.nyhed_titel {
+    font-family: var(--HeadingFont);
+    font-size: 2em;
 }
 
 .nyhed_img_container {
+    /*
     grid-column: 2/3;
-    grid-row: 1/2;
+grid-row: 1/2;
+*/
+    grid-area: billede;
     /*    max-height: 350px;*/
     overflow: hidden;
 }
@@ -493,15 +505,7 @@ footer li {
     transform: translateY(-50%);
 }
 
-.nyhed_tekst_card {
-    grid-column: 1/2;
-    align-self: center;
-}
 
-.nyhed_titel {
-    font-family: var(--HeadingFont);
-    font-size: 2em;
-}
 
 
 

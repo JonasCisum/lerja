@@ -45,13 +45,20 @@
                 <a class="a_btn btn_to_shop" href="#">Gå til butikken ></a>
             </section>
 
-            <section id="showcase_section">
-                <h2>Samarbejdspartnere</h2>
-                <template id="showcase_template">
-            <img data-showcase_img src="" alt="">
-            <p data-showcase_navn></p>
-        </template>
+            <section id="showcase_section" class="showcase">
+                <div class="tekst_1">
+                    <h2>Samarbejdspartnere</h2>
+                    <p>Vi er stolte over, at kunne levere keramik til nogle af Danmarks bedste spisesteder og caféer. Her er et udpluk af dem vi har samarbejdet med.</p>
+                </div>
+                <div id="showcase_modtager"></div>
             </section>
+
+            <template id="showcase_template">
+                <article class="showcase_item">
+                <img data-showcase_img src="" alt="">
+                <p data-showcase_navn></p>
+                </article>
+            </template>
         </main>
         <footer></footer>
     </div>
