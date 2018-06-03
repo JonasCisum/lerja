@@ -124,6 +124,9 @@ footer {
     margin: 0 !important;
 }
 
+iframe {
+    border: 0;
+}
 
 /*------------------------
     NAVIGATION
