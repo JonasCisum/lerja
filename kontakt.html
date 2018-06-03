@@ -7,53 +7,48 @@
     <meta name="description" content="">
     <title>Lerja - Kontakt</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/maps.css">
     <link rel="stylesheet" href="fonts/fontawesome/css/fontawesome-all.css">
 </head>
 
 <body>
-    <header data-header>
-        <nav data-nav></nav>
-    </header>
+    <div class="page">
+        <header data-header>
+            <nav data-nav></nav>
+        </header>
+        <main>
+            <section id="hero">
+                <h1 data-side_titel></h1>
+                <p data-underrubrik></p>
+            </section>
 
-    <section id="hero">
-        <h1 data-side_titel></h1>
-        <p data-underrubrik></p>
-    </section>
+            <section id="kontaktform">
+                <!--        FORMULAR          -->
+                <form action="sendmail.php" method="post">
+                    <p>Fornavn:</p>
+                    <input type="text" name="fornavn" placeholder="Fornavn" value="" required>
+                    <p>Efternavn:</p>
+                    <input type="text" name="efternavn" placeholder="Efternavn" value="" required>
+                    <p>Din e-mail:</p>
+                    <input type="email" name="email" placeholder="Din e-mail" value="" required>
+                    <p>Virksomhed:</p>
+                    <input type="text" name="virksomhed" placeholder="Virksomhed" value="">
+                    <p>Besked:</p>
+                    <textarea name="besked" placeholder="Skriv din besked her."></textarea>
+                    <input type="submit" name="submit" value="Send besked">
+                </form>
+            </section>
 
-    <section id="kontaktform">
-        <!--        FORMULAR          -->
-        <form action="sendmail.php" method="post">
-            <p>Fornavn:</p>
-            <input type="text" name="fornavn" placeholder="Fornavn" value="" required>
-            <p>Efternavn:</p>
-            <input type="text" name="efternavn" placeholder="Efternavn" value="" required>
-            <p>Din e-mail:</p>
-            <input type="email" name="email" placeholder="Din e-mail" value="" required>
-            <p>Virksomhed:</p>
-            <input type="text" name="virksomhed" placeholder="Virksomhed" value="">
-            <p>Besked:</p>
-            <textarea name="besked" placeholder="Skriv din besked her."></textarea>
-            <input type="submit" name="submit" value="Send besked">
-        </form>
-    </section>
-
-    <section id="maps">
-        <h2>Find Lerja</h2>
-        <div id="maps_container">
-            <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDGdaytzAFkBbreWnmfx53JGClENbZMVfE&q=Schleppegrellsgade+1,Kbh+N+2200" allowfullscreen>
-    </iframe>
-        </div>
-    </section>
-
-    <footer></footer>
+            <section id="maps">
+                <h2>Find Lerja</h2>
+                <div id="maps_container">
+                    <iframe width="600" height="600" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDGdaytzAFkBbreWnmfx53JGClENbZMVfE&q=Schleppegrellsgade+1,Kbh+N+2200" allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+        </main>
+        <footer class="zero_margin"></footer>
+    </div>
     <!--    SCRIPT START   -->
-    <script src="js/fetch_json.js"></script>
-    <script src="js/maps.js"></script>
-    <script src="js/buttons.js"></script>
-    <script src="js/nav.js"></script>
-    <script src="js/sections.js"></script>
-    <script src="js/footer.js"></script>
     <script>
         function insertContent() {
             //kør json array igennem
@@ -65,7 +60,14 @@
                 }
             })
         }
+
     </script>
+    <script src="js/fetch_json.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/sections.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/maps.js"></script>
 </body>
 
 </html>

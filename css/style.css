@@ -116,6 +116,11 @@ footer {
     width: 100%;
 }
 
+.zero_margin {
+    margin: 0 !important;
+}
+
+
 /*------------------------
     NAVIGATION
 ------------------------*/
@@ -490,12 +495,8 @@ footer li {
 }
 
 .nyhed_img_container {
-    /*
-    grid-column: 2/3;
-grid-row: 1/2;
-*/
     grid-area: billede;
-    /*    max-height: 350px;*/
+    max-height: 350px;
     overflow: hidden;
 }
 
@@ -504,10 +505,6 @@ grid-row: 1/2;
     top: 40%;
     transform: translateY(-50%);
 }
-
-
-
-
 
 /**/
 
@@ -665,4 +662,34 @@ grid-row: 1/2;
 
 /**/
 
+/**/
+
+/*** KONTAKT ***/
+
+/* Maps */
+
+#maps {
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#maps_container {
+    position: relative;
+    /*    padding-bottom: 56.25%;*/
+    padding-bottom: 600px;
+    padding-right: 0px;
+    overflow: hidden;
+}
+
+#maps_container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* END ALL SECTIONS */
+
+/*** KONTAKTFORMULAR ***/
