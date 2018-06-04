@@ -147,7 +147,7 @@ iframe {
     width: 100%;
     opacity: 0.9;
     display: grid;
-    grid-column: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .burger_img {
@@ -202,6 +202,7 @@ nav {
 @media screen and (min-width:700px) {
 
     .header_logo {
+        margin-bottom: 0px;
         display: block !important;
         justify-self: start;
     }
