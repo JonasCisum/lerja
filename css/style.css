@@ -132,20 +132,58 @@ iframe {
     NAVIGATION
 ------------------------*/
 
-@media screen and (max-width:700px) {
-    header {
-        display: none;
-    }
-
+#fullnav {
+    display: none;
 }
 
+#mySidenav {
+    display: block;
+}
 
-header {
+.burger_strokes {
     position: fixed;
-    padding: 20px 10px 20px 30px;
-    background: hsla(0, 0%, 100%, 0.95);
-    max-width: 1300px;
-    z-index: 1000;
+    z-index: 100;
+    background: #fff;
+    width: 100%;
+    opacity: 0.9;
+    display: grid;
+    grid-column: 1fr 1fr;
+}
+
+.burger_img {
+    width: 50px;
+    margin: 20px 15px;
+    cursor: pointer;
+}
+
+.mobile_logo {
+    width: 140px;
+    margin: 25px 15px 20px 15px;
+    grid-column: 2/3;
+    justify-self: end;
+}
+
+@media screen and (min-width:700px) {
+    header {
+        position: fixed;
+        padding: 20px 10px 20px 30px;
+        background: hsla(0, 0%, 100%, 0.95);
+        max-width: 1300px;
+        z-index: 1000;
+    }
+    #fullnav {
+        display: grid;
+    }
+
+    #mySidenav {
+        display: none;
+    }
+    .closebtn {
+        display: none;
+    }
+    .burger_strokes {
+        display: none;
+    }
 }
 
 nav {
@@ -156,11 +194,18 @@ nav {
     align-items: center;
 }
 
-
 .header_logo {
-    justify-self: start;
+    margin-bottom: 30px;
+    display: none !important;
 }
 
+@media screen and (min-width:700px) {
+
+    .header_logo {
+        display: block !important;
+        justify-self: start;
+    }
+}
 
 .header_logo img {
     width: 170px;
@@ -182,12 +227,83 @@ nav {
     transition: .1s;
 }
 
-.nav_item:hover,
-.nav_item:focus {
-    color: #404040;
-    /*    font-weight: 700;*/
-    border-bottom: 2px solid #909090;
-    transition: .2s;
+@media screen and (min-width:700px) {
+
+    .nav_item:hover,
+    .nav_item:focus {
+        color: #404040;
+        /*    font-weight: 700;*/
+        border-bottom: 2px solid #909090;
+        transition: .2s;
+    }
+}
+
+/* SIDENAV */
+
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 101;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover {
+    color: #777;
+}
+
+/* Position and style the close button (top right corner) */
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+#main {
+    transition: margin-left .5s;
+    padding: 0px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
 
 /*------------------------
@@ -642,7 +758,7 @@ footer li {
     }
 
     #erhvev_hero .tekst_1 {
-        grid-column: 2/9;
+        grid-column: 2/11;
         grid-row-start: 1;
         z-index: 100;
     }

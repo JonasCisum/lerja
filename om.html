@@ -14,7 +14,12 @@
 <body>
     <div class="page">
         <header data-header>
-            <nav data-nav></nav>
+            <span class="burger_strokes" onclick="openNav()">
+                <img class="burger_img" src="/img/if_menu-alt_134216.svg">
+                <img class="mobile_logo" src="img/logo/lerja-logo-a-black-web.png">
+            </span>
+            <nav data-nav id="fullnav"></nav>
+            <nav data-burger id="mySidenav" class="sidenav"></nav>
         </header>
         <main>
             <section id="om_hero" class="magazine">
@@ -119,6 +124,8 @@
     <script src="js/footer.js"></script>
     <script src="js/infografik.js"></script>
     <script src="js/odometer.js"></script>
+    <script src="js/burger.js"></script>
+
 </body>
 
 </html>
